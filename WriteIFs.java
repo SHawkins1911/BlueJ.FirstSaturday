@@ -2,22 +2,30 @@
 /**
  * Write a description of class WriteIFs here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Stefun Hawkins)
+ * @version (version 1)
  */
 public class WriteIFs
 {
  
     public void playerDied(boolean player1) {
         // Write an IF statement that checks “player1.isAlive()” 
+        if(player1 == false){
+            displayGameOver(player1);
+        }
         // and if that’s false, calls “displayGameOver(player1)”
      
     }
     
     public String thermoSTAT(int room) {
-        // Write an IF statement that checks the 
-        // “temperature(room)” and if that check is less than 70, 
-        // calls “heatOn()” else calls “coolOn()”
+        String status = "";
+        if(room < 70){
+            heatOn();
+            
+            }else{
+                
+            coolOn();
+             }
 
 
         
@@ -25,17 +33,18 @@ public class WriteIFs
     }
 
     public void fireplaceControl(Object fireplace1) {
-        // Write an IF statement that checks 
-        // “outsideTemp()” is less than 50 
-        // AND 
-        // “insideTemp()” is less than 62, 
-        // calls “startAFire(fireplace1)”
-
+     
+        if(outsideTemp() < 50 && insideTemp() < 62){
+            startAFire(fireplace1);
+        }
     }
 
     public void checkFuel(double fuelLevel) {
         // Write an IF statement that checks “fuelLevel” 
         // and if that check is less than 0.08, calls “refuel()”
+        if(fuelLevel < 0.08){
+            refuel();
+        }
 
     }
 
@@ -57,7 +66,7 @@ public class WriteIFs
   /**
    * Constructor for objects of class WriteIFs
    */
-  public WriteIFs()
+  public WriteIFs(){
   {
       // initialise instance variables
       x = 0;
@@ -66,7 +75,7 @@ public class WriteIFs
       ss = "";
       oo1 = 61;
       oo2 = 49;
-  }
+  
 
     // associated routines
     public boolean isAlive(boolean p) {
